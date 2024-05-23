@@ -1,0 +1,19 @@
+{
+    "name": "YT SelectSearch",
+    "description": "A small tool that allows you to search YouTube with the text selected using the right click menu! With inbuilt search extension and history features(coming soon)",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "background":{
+        "service_worker":"background.js"
+    },
+    "permissions": ["storage", "activeTab", "contextMenus"],
+    "action":{
+        "default_popup": "popup.html"
+    },
+    "content_scripts":[
+        {
+            "matches":["https://*.google.com/*"],
+            "js":["content.js"]
+        }
+    ]
+}
